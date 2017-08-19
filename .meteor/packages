@@ -1,0 +1,37 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-base@1.1.0             # Packages every Meteor app needs to have
+mobile-experience@1.0.4       # Packages for a great mobile UX
+mongo@1.1.19                   # The database Meteor supports right now
+blaze-html-templates@1.0.4 # Compile .html files into Meteor Blaze views
+reactive-var@1.0.11            # Reactive variable for tracker
+tracker@1.1.3                 # Meteor's client-side reactive programming library
+
+standard-minifier-css@1.3.4   # CSS minifier run for production mode
+standard-minifier-js@2.1.1    # JS minifier run for production mode
+es5-shim@4.6.15                # ECMAScript 5 compatibility for older browsers
+ecmascript@0.8.1              # Enable ECMAScript2015+ syntax in app code
+shell-server@0.2.4            # Server-side component of the `meteor shell` command
+
+autopublish@1.0.7             # Publish all data to the clients (for prototyping)
+insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
+
+kadira:flow-router              # FlowRouter is a very simple router for Meteor.
+kadira:blaze-layout             # This is a layout manager designed for Blaze.
+erasaur:meteor-lodash           # A wrapper for Lo-Dash (Underscore.js)
+stolinski:stylus-multi          # The Level Up Tutorials Stylus/PostCSS Stack.
+fortawesome:fontawesome         # Fontawesome
+spiderable                      # spiderable is part of Webapp. It's one possible way to allow web search engines to index a Meteor application.
+fastclick                       # FastClick is a simple, easy-to-use library for eliminating the 300ms delay between a physical tap and the firing of a click event on mobile browsers.
+raix:handlebar-helpers          # Provides a simple way of using sessions and collections in the Meteor Spacebars template environment.
+aldeed:collection2              # Allows you to attach a schema to a Mongo.Collection. 
+aldeed:autoform                 # Adds UI components and helpers to easily create basic forms with automatic insert and update events, and automatic reactive validation.
+accounts-ui                     # A turn-key user interface for Meteor Accounts.
+accounts-password               # Contains a full system for password-based authentication
+matb33:bootstrap-glyphicons     # Bootstrap
+zimme:active-route              # This package provide helpers for figuring out if some route or path is or isn't the currently active route.
+gwendall:auth-client-callbacks  # Adds client-side onLogin and onLogout callbacks.
