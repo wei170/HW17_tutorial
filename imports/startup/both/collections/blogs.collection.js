@@ -1,3 +1,6 @@
+import SimpleSchema from 'simpl-schema';
+SimpleSchema.extendOptions(['autoform']);
+
 Blogs = new Mongo.Collection('blogs');
 
 BlogSchema = new SimpleSchema({
@@ -9,9 +12,19 @@ BlogSchema = new SimpleSchema({
         type: String,
         label: 'Content'
     },
+    tags: {
+        type: Array,
+        label: 'Tags'
+    },
+    'tags.$': {
+        type: String
+    },
     author: {
         type: String,
         label: 'Author',
+        autoform: {
+            type: 'hidden'
+        },
         autoValue: function() {
             return this.userId;
         }
@@ -19,6 +32,9 @@ BlogSchema = new SimpleSchema({
     createdAt: {
         type: Date,
         label: 'Created At',
+        autoform: {
+            type: 'hidden'
+        },
         defaultValue: function() {
             return new Date();
         }
@@ -27,3 +43,9 @@ BlogSchema = new SimpleSchema({
 
 Blogs.schema = BlogSchema;
 Blogs.attachSchema(BlogSchema);
+
+Blogs.allow({
+    insert: function(userId) {
+        return !!userId;
+    }
+});
