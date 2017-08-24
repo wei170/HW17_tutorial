@@ -5,9 +5,16 @@ FlowRouter.route('/', {
     }
 });
 
-FlowRouter.route('/blogs/new', {
+FlowRouter.route('/newblog', {
     name: 'newblog',
     action() {
         BlazeLayout.render('MainLayout', {main: 'NewBlog'});
+    }
+});
+
+FlowRouter.route('/blogs', {
+    name: 'blogs',
+    action() {
+        BlazeLayout.render('MainLayout', {main: 'Blogs'});
     }
 });
