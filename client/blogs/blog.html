@@ -1,0 +1,14 @@
+<template name="Blog">
+    {{#with blog}}
+        <section class="blog">
+            <h3><a href="/blogs/{{_id}}">{{title}}</a></h3>
+            <p>{{content}}</p>
+            <p>
+                <i class="fa fa-tags" aria-hidden="true"></i> 
+                {{#each tag in tags}}
+                    {{tag}}
+                {{/each}}
+            </p>
+        </section>
+    {{/with}}
+</template>

@@ -18,3 +18,10 @@ FlowRouter.route('/blogs', {
         BlazeLayout.render('MainLayout', {main: 'Blogs'});
     }
 });
+
+FlowRouter.route('/blogs/:id', {
+    name: 'blog',
+    action() {
+        BlazeLayout.render('MainLayout', {main: 'Blog'});
+    }
+});

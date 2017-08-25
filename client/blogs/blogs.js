@@ -4,3 +4,9 @@ Template.Blogs.helpers({
         return Blogs.find({});
     }
 });
+
+Template.Blog.helpers({
+    blog: function() {
+        return Blogs.findOne({_id: FlowRouter.getParam('id')});
+    }
+});
