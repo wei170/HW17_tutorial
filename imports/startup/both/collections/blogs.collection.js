@@ -46,12 +46,18 @@ Blogs.attachSchema(BlogSchema);
 
 Blogs.allow({
     insert: function(userId, doc) {
+        // When the user is logged in
         return !!userId;
     },
     update: function(userId, doc) {
+        // When the user is logged in
         return !!userId;
-    },
-    delete: function(userId) {
-        return !!userId;
+    }
+});
+
+Blogs.deny({
+    remove: function() {
+        // We DENY any kind of remove
+        return true;
     }
 });
