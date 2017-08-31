@@ -1,3 +1,6 @@
+// Subscribe blogs
+Meteor.subscribe('blogs');
+
 Template.Blogs.helpers({
     blogs: function() {
         // Mongodb : find all Blogs

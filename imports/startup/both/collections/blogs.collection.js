@@ -45,7 +45,13 @@ Blogs.schema = BlogSchema;
 Blogs.attachSchema(BlogSchema);
 
 Blogs.allow({
-    insert: function(userId) {
+    insert: function(userId, doc) {
+        return !!userId;
+    },
+    update: function(userId, doc) {
+        return !!userId;
+    },
+    delete: function(userId) {
         return !!userId;
     }
 });
