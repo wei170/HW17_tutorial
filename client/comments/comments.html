@@ -1,0 +1,33 @@
+<template name="Comments">
+    <section class="comment">
+        <h3>Comments</h3>
+        {{#each comment in comments}}
+            {{#if isAuthor comment.createdBy}}
+                <section class="comment-right">
+                    <h3>Test Right</h3>
+                    <p>{{{comment.content}}}</p>
+                </section>
+            {{else}}
+                <section class="comment-left">
+                    <h3>Test Left</h3>
+                    <p>{{{comment.content}}}</p>
+                </section>
+            {{/if}}
+        {{/each}}
+    </section>
+    <br>
+    {{> NewBlogComment blogId=blogId}}
+</template>
+
+<template name="NewBlogComment">
+    <section class="new-comment-container">
+        {{#autoForm collection="Comments" id="insertBlogCommentForm" type="insert"}}
+            <section>
+                <h3>Post A Comment</h3>
+                {{> afQuickField name='blogId' value=blogId}}
+                {{> afQuickField name='content' rows=3}}
+            </section>
+            <button type="submit" class="btn">Submit</button>
+        {{/autoForm}}
+    </section>
+</template>

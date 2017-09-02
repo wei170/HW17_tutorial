@@ -20,6 +20,9 @@ FlowRouter.triggers.enter([function() {
 FlowRouter.route('/', {
     name: 'home',
     action() {
+        if (Meteor.userId()) {
+            FlowRouter.go('blogs');
+        }
         BlazeLayout.render('HomeLayout');
     }
 });
